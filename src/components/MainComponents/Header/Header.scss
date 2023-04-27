@@ -1,0 +1,62 @@
+@import "../../MainWrapper.scss";
+
+.header {
+    min-height: 75px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 1rem;
+    @include flex($dir:row, $justify:space-between);
+
+    .clear {
+        width: 126px;
+        padding: .5rem 2rem;
+        margin-left: 1rem;
+    }
+
+    .button {
+        padding: .5rem 2rem;
+        background-color: black;
+        color: white;
+        border: none;
+        font-size: 1.3rem;
+        border-radius: 1.5rem;
+        margin-right: 1rem;
+
+        @media (hover:hover) {
+            &:hover {
+                background-color: rgb(67, 67, 67);
+                color: white;
+            }
+        }
+    }
+
+    a {
+        color: black;
+        font-size: 2rem;
+        text-decoration: none;
+
+        @media (hover: hover) {
+            &:hover {
+                color: black;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        @include flex($dir:column, $justify:center);
+        padding-top: .5rem;
+
+        .clear {
+            display: none;
+        }
+
+        a {
+            margin-bottom: .5rem;
+        }
+
+        .button {
+            width: 80%;
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.container {
+    padding: 1rem;
+    padding-top: 0;
+}
+
+@mixin flex($dir: column, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin error() {
+    width: 80vw;
+    padding: .2rem;
+    background-color: red;
+    color: white;
+    margin-bottom: .3rem;
+}
+
+@media (hover:860px) {
+    .container {
+        padding-top: 0;
+    }               
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: .3rem;
+    }
+}

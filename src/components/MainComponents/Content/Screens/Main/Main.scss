@@ -1,0 +1,52 @@
+@import "../../../../MainWrapper.scss";
+
+.main {
+    padding: 3rem;
+
+    p {
+        margin-bottom: 1rem
+    }
+
+    .blockOfButtons {
+        @include flex();
+        width: 100%;
+
+        .button {
+            padding: .5rem .6rem;
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            width: 319px;
+            font-size: 1.56rem;
+            background-color: #DEDEDE;
+            border-radius: 1.5rem;
+            margin-bottom: .7rem;
+
+            @media (hover:hover) {
+                &:hover {
+                    background-color: #9d9d9d;
+                    color: white;
+                }
+            }
+
+            @media (max-width:860px) {
+                
+            }
+
+            @media (max-width:600px) {
+                &.button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        padding: 1rem;
+    }
+
+    @media (max-width: 475px) {
+        padding: 0 .5rem;
+        font-size: .7rem;
+    }
+}
