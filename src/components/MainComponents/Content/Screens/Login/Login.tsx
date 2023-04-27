@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import CheckToken from '../CheckToken/CheckToken';
 import { URL } from '../../../../MainWrapper';
-import Context from '../../../Context/Context';
 import ContextUpdate from '../../../Context/ContextUpdate';
 import "./Login.scss";
 import { Link } from "react-router-dom";
@@ -12,6 +11,10 @@ const Login = () => {
     const [error, setError] = useState<String | null>(null);
 
     const { setIsHide } = useContext(ContextUpdate)
+
+    useEffect(() => {
+        setIsHide('none')
+    }, [])
 
     async function login() {
         let endpoint = 'api/v0.1/auth/login/password';

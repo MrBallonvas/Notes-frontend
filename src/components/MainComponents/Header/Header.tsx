@@ -7,32 +7,33 @@ const Header = () => {
 
     const { isHide } = useContext(Context)
 
-    const [headerStyles, setHeaderStyles] =
+    const [styles, setStyles] =
         useState({
-            display: 1
+            display: 'none'
         })
 
-    useEffect(() => {
+    useEffect(()=> {
         if (isHide === 'none') {
-            setHeaderStyles({
+            setStyles({
                 a: 'block',
                 b: '75px'
             })
         } else {
-            setHeaderStyles({
+            setStyles({
                 a: 'flex',
                 b: 'none'
             })
         }
-    }, [])
+    }, [isHide])
 
 
     return (
         <header className="header"
             style={{
-                display: headerStyles.a,
-                lineHeight: headerStyles.b,
-            }}>
+                display: styles.a,
+                lineHeight: styles.b,
+            }}
+        >
             <div className="clear"
                 style={{
                     display: isHide,
